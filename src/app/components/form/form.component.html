@@ -1,0 +1,50 @@
+<div class="body">
+  <form>
+    <div class="form">
+      <div>
+        <mat-form-field class="form__field">
+          <input
+            type="text"
+            class="form-control"
+            (keyup)="onKeyUp($event)"
+            matInput
+            placeholder="Wprowadź PESEL"
+            [formControl]="peselFormControl"
+            maxlength="11"
+            autocomplete="off"
+          />
+          <mat-error
+            *ngIf="
+              !peselFormControl.hasError('minLength') &&
+              !peselFormControl.hasError('required')
+            "
+          >
+            PESEL za krótki.
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form__buttonsContainer">
+        <button
+          mat-raised-button
+          color="basic"
+          class="form__buttonsContainer__button"
+          (click)="getNum()"
+          [disabled]="disabled"
+        >
+          Wyślij
+        </button>
+        <button
+          mat-raised-button
+          color="basic"
+          class="form__buttonsContainer__button"
+          (click)="clearNum()"
+        >
+          Wyczyść
+        </button>
+      </div>
+    </div>
+    <div class="responseContainer" *ngIf="show">
+      <app-response [response]="numbers"></app-response>
+    </div>
+  </form>
+</div>

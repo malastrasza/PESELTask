@@ -1,0 +1,62 @@
+$background-body-color: rgb(220, 220, 220, 0.2);
+$background-frame-color: rgb(255, 255, 255);
+$border-color: rgb(148, 148, 148);
+$font-color: rgb(0, 0, 0);
+$shadow: rgba(0,0,0,0.35);
+
+.body {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: $background-body-color;
+}
+
+.form {
+  box-shadow: 0px 0px 5px 1px $shadow;
+  background-color: $background-frame-color;
+  width: 25vw;
+  height: 25vh;
+  max-width: 600px;
+  min-width: 300px;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  margin-top: 15vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  &__field {
+    width: 40%;
+    min-width: 200px;
+    max-width: 250px;
+  }
+  &__buttonsContainer {
+    width: 100%;
+    padding: 5px;
+    margin: 5px;
+    align-self: center;
+    &__button {
+      margin: 0 15px;
+    }
+  }
+}
+
+.responseContainer {
+  margin-top: 25px;
+  width: 25vw;
+  height: 20vh;
+  max-width: 600px;
+  min-width: 300px;
+  text-align: center;
+}
+
+::ng-deep {
+  &.mat-form-field.mat-focused .mat-form-field-label {
+    color: $font-color !important;
+  }
+  &.mat-focused .mat-form-field-underline .mat-form-field-ripple {
+    background-color: $font-color !important;
+  }
+}
