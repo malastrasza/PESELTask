@@ -1,6 +1,6 @@
 <div class="body">
   <form>
-    <div class="form">
+    <section class="form">
       <div>
         <mat-form-field class="form__field">
           <input
@@ -42,9 +42,9 @@
           Wyczyść
         </button>
       </div>
-    </div>
-    <div class="responseContainer" *ngIf="show">
+    </section>
+    <section class="responseContainer" *ngIf="show">
       <app-response [response]="numbers"></app-response>
-    </div>
+    </section>
   </form>
 </div>
